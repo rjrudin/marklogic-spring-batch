@@ -1,8 +1,6 @@
-//apply plugin: "com.jfrog.bintray"
-
 dependencies {
     compile "org.springframework.batch:spring-batch-core:${springBatchVersion}"
-    compile('com.marklogic:marklogic-jena:3.0.5')
+    compile('com.marklogic:marklogic-jena:3.0.6')
     testCompile project(':test')
 }
 
@@ -33,22 +31,3 @@ publishing {
         }
     }
 }
-/*
-bintray {
-    user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
-    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_KEY')
-    publications = [bintrayPublicationName]
-    pkg {
-        repo = bintrayRepo
-        name = artifact
-        userOrg = bintrayUserOrg
-        licenses = [bintrayLicense]
-        vcsUrl = bintrayVcsUrl
-        version {
-            name = project.version
-            released = new Date()
-            vcsTag = project.version
-        }
-    }
-}
-*/

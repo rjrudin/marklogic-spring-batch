@@ -52,4 +52,9 @@ public abstract class AbstractSpringBatchTest extends AbstractSpringTest {
         return xccTemplate;
     }
 
+    protected void assertCollectionSize(String message, String collection, int count) {
+        Integer actualCount = Integer.parseInt(getXccTemplate().executeAdhocQuery(
+                format("xdmp:estimate(fn:collection('%s'))", collection)));
+        assertEquals(message, count, (int)actualCount);
+    }
 }

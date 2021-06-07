@@ -1,5 +1,5 @@
 dependencies {
-    compile "org.apache.httpcomponents:httpmime:4.5.2"
+    compile "org.apache.httpcomponents:httpmime:4.5.13"
     compile project(':core')
     testCompile project(':test')
 }

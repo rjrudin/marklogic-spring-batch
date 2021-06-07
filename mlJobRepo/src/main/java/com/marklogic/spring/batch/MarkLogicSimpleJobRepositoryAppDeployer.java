@@ -53,8 +53,8 @@ public class MarkLogicSimpleJobRepositoryAppDeployer {
         appConfig.setHost(host);
         appConfig.setGroupName(group);
         appConfig.setRestPort(port);
-        appConfig.setRestAdminUsername(config.getManageClient().getManageConfig().getAdminUsername());
-        appConfig.setRestAdminPassword(config.getManageClient().getManageConfig().getAdminPassword());
+        appConfig.setRestAdminUsername(config.getManageClient().getManageConfig().getSecurityUsername());
+        appConfig.setRestAdminPassword(config.getManageClient().getManageConfig().getSecurityPassword());
 
         //Set rest properties
         DatabaseClient client = appConfig.newDatabaseClient();

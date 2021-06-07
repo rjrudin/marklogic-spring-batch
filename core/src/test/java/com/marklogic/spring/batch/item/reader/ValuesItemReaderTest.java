@@ -47,8 +47,8 @@ public class ValuesItemReaderTest extends AbstractSpringBatchTest {
             DocumentMetadataHandle h = (i % 2 == 0) ? metadata : metadata2;
             docMgr.write("hello" + i + ".xml", h, xml1);
         }
-        helper.assertCollectionSize("a = 300", "a", 300);
-        helper.assertCollectionSize("b = 300", "b", 300);
+        assertCollectionSize("a = 300", "a", 300);
+        assertCollectionSize("b = 300", "b", 300);
     }
 
     @Test

@@ -125,7 +125,7 @@ public class MarkLogicItemWriterTest extends AbstractSpringBatchTest implements 
         itemWriter.setThreadCount(2);
         write(getDocuments());
         clientTestHelper.assertInCollections("abc.xml", "raw");
-        clientTestHelper.assertCollectionSize("Expecting two items in raw collection", "raw", 2);
+        assertCollectionSize("Expecting two items in raw collection", "raw", 2);
     }
     
     class LongHolder {
@@ -147,7 +147,7 @@ public class MarkLogicItemWriterTest extends AbstractSpringBatchTest implements 
         });
         write(getDocuments());
         clientTestHelper.assertInCollections("abc.xml", "raw");
-        clientTestHelper.assertCollectionSize("Expecting two items in raw collection", "raw", 2);
+        assertCollectionSize("Expecting two items in raw collection", "raw", 2);
         ClientTestHelper.assertTrue("Batcher wrote 2 docs", lh.writes == 2L);
     }
     
@@ -169,7 +169,7 @@ public class MarkLogicItemWriterTest extends AbstractSpringBatchTest implements 
         		ClientTestHelper.assertTrue("Should not get here, but will be set",false);
         });
         write(getBadDocument());
-        clientTestHelper.assertCollectionSize("Expecting no items in raw collection", "raw", 0);
+        assertCollectionSize("Expecting no items in raw collection", "raw", 0);
         ClientTestHelper.assertTrue("Exception expected bad character ", sh.msg.contains("XDMP-DOCSTARTTAGCHAR"));
     }
 
@@ -203,7 +203,7 @@ public class MarkLogicItemWriterTest extends AbstractSpringBatchTest implements 
             ServerTransform serverTransform = new ServerTransform(transformName);
             serverTransform.addParameter("monster", "grover");
             serverTransform.addParameter("trash-can", "oscar");
-            itemWriter = new MarkLogicItemWriter(client, serverTransform, Format.XML);
+            itemWriter = new MarkLogicItemWriter(client, serverTransform);
             write(writeOps);
         } catch (Exception e) {
             e.printStackTrace();
@@ -257,7 +257,7 @@ public class MarkLogicItemWriterTest extends AbstractSpringBatchTest implements 
         handles.add(handle);
         itemWriter = new MarkLogicItemWriter(client);
         write(handles);
-        clientTestHelper.assertCollectionSize("Expecting zero items in raw collection", "raw", 0);
+        assertCollectionSize("Expecting zero items in raw collection", "raw", 0);
     }
 
     @Test(expected = NullPointerException.class)

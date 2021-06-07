@@ -80,12 +80,6 @@ http://hc.apache.org/httpcomponents-core-ga/
 Made available under the Apache License 2.0
 https://spdx.org/licenses/Apache-2.0.html
 
-Gradle Bintray Plugin 1.7.3
-(c) All rights reserved JFrog
-https://github.com/bintray/gradle-bintray-plugin
-Made available under the Apache License 2.0
-https://spdx.org/licenses/Apache-2.0.html
-
 Logback 1.2.3
 Copyright (C) 1999-2017, QOS.ch. All rights reserved.
 https://logback.qos.ch/

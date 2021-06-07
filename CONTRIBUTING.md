@@ -102,16 +102,10 @@ The quality of this project is based on the tests that exercise the code.  Every
 ## MarkLogic Spring Batch Libraries
 To deploy the marklogic-spring-batch core and test library to your local maven repository, first, increment the relevant version number in the gradle.properties file.
 
-It is advised to first publish artifacts to the local maven repository and run local tests before publishing out to [bintray](https://bintray.com/)
+It is advised to first publish artifacts to the local maven repository and run local tests before publishing:
 
 ```
 gradle publishToMavenLocal
-```
-
-Once you have verified your version then run the following command to publish to bintray (authoritative personnel only)
-
-```
-gradle bintrayUpload
 ```
 
 # What is the best way to ask a question?  

@@ -45,7 +45,7 @@ This project uses both checkstyle and PMD.
 
 ## Deployment
 
-The product of this project are jar files that are published to [bintray](https://dl.bintray.com/sastafford/maven/).  The following libraries are created. 
+The following libraries are created:
 
 | Group | Artifact |
 | ------|----------|
@@ -54,14 +54,6 @@ The product of this project are jar files that are published to [bintray](https:
 | com.marklogic | spring-batch-http |
 | com.marklogic | spring-batch-rdbms |
 | com.marklogic | spring-batch-file |
-
-The gradle bintray plugin is used to publish to bintray.
-
-     gradlew :core:bintrayUpload
-     gradlew :file:bintrayUpload
-     gradlew :test:bintrayUpload
-     gradlew :http:bintrayUpload
-     gradlew :rdbms:bintrayUpload
 
 ## How do I use these libraries?
 

@@ -6,13 +6,12 @@ buildscript {
         }
     }
     dependencies {
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3"
-        classpath "com.marklogic:ml-gradle:3.2.0"
+        classpath "com.marklogic:ml-gradle:4.1.1"
     }
 }
 
 plugins {
-    id "com.marklogic.ml-gradle" version "3.3.0"
+    id "com.marklogic.ml-gradle" version "4.1.1"
 }
 
 mlPostDeploy.dependsOn ":mlJobRepo:deployMarkLogicJobRepository"
@@ -27,10 +26,6 @@ allprojects {
         mavenCentral()
         maven { url "http://repo.spring.io/release" }
         maven { url "http://developer.marklogic.com/maven2/" }
-    }
-
-    task wrapper(type: Wrapper) {
-        gradleVersion = '4.5'
     }
 
     pmd {
@@ -50,8 +45,8 @@ subprojects {
     apply plugin: "idea"
 
     ext {
-        springBatchVersion = '4.0.0.RELEASE'
-        springVersion = '5.0.2.RELEASE'
+        springBatchVersion = '4.3.3'
+        springVersion = '5.3.7'
     }
 
     dependencies {

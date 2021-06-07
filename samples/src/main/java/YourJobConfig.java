@@ -118,8 +118,13 @@ public class YourJobConfig {
         MarkLogicItemProcessor<String> processor = new MarkLogicItemProcessor<String>() {
 
             @Override
-            public DocumentWriteOperation process(String item) throws Exception {
+            public DocumentWriteOperation process(String item) {
                 DocumentWriteOperation dwo = new DocumentWriteOperation() {
+
+                    @Override
+                    public int compareTo(DocumentWriteOperation o) {
+                        return 0;
+                    }
 
                     @Override
                     public OperationType getOperationType() {
